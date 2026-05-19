@@ -7,6 +7,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 li {
     list-style: none;
 }
@@ -227,11 +231,13 @@ nav,
     font-size: 32px;
     border-radius: 50%;
     border: none;
+    box-shadow: 0 12px 30px 0 rgb(0, 0, 0, 0.35);
     background-color: #242424;
     color: white;
-    position: absolute;
+    position: fixed;
     bottom: 32px;
     right: 40px;
+    z-index: 100;
 }
 
 .scroll {
@@ -564,6 +570,7 @@ nav {
 /* FOOTER */
 
 footer {
+    position: relative;
     background-color: #242424;
     display: flex;
     padding: 6% 0;
@@ -642,4 +649,63 @@ footer {
 .shape__8 {
     left: 80vw;
     top: 80vh;
+}
+
+/* Small phones, tablets, and large smartphones */
+@media (max-width: 768px) {
+    .title {
+        font-size: 80px;
+    }
+
+    .header__paragraph {
+        font-size: 20px;
+    }
+
+    .modal {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+        flex-direction: column-reverse;
+        transform: none;
+    }
+
+    .modal__half {
+        width: 100%;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    .title {
+        font-size: 52px;
+    }
+
+    .header__paragraph {
+        font-size: 18px;
+    }
+
+    .nav__link:first-child {
+        display: none;
+    }
+
+    .project__description {
+        left: 0;
+        padding: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .project__description--subtitle {
+        margin-bottom: 8px;
+    }
+
+    .project__description--paragraph {
+        display: none;
+    }
+
+    .modal__half {
+        padding: 40px;
+    }
 }
